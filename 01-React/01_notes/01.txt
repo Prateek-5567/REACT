@@ -1,0 +1,40 @@
+link < https://app.eraser.io/workspace/PYqNL9jKd4y4lDYnATBF?origin=share > 
+
+-> to search on most of the softwares shortcut is cmd + p.
+
+-> npx is node package executer. (to execute node files/.)
+
+        prefer npx as mostly you just want to execute your files.
+
+-> npm is node package manager. (no manage node package).
+
+-> SOMETIMES you don't want to install npm entirely on your system you just need to execute files so npx is light and useful.
+
+
+
+#### `npx create react app 01ReactBasics ` 
+      -> the bulky package is installed using `create react app` command.  
+
+     ->  use : npm run start      or      npm start        or  npm dev  etc scripts in terminal to run your project .
+
+     -> use : npm run build       -> to make build folder 
+
+     -> in this way your node modules will be preinstalled , you will get some extra dependencies in package.json like testing libraries , scripts etc.
+
+
+
+#### `npm create vite@latest ` 
+      -> go to react vite website to know how to setup vite project .
+
+      -> npm create vite@latest  + Enter => then give details of your vite project. 
+
+      -> vite is a bundler ; ls and ls -a commands -> to list documents and hidden docs.
+
+      -> your node module will not be preinstalled use ` npm install `  to get it. (without this step project will not run .)
+
+      -> then run it using any of the script except build cuz that is used for deployment.
+
+
+
+initially used files -> Index.js , Index.css , App.css , App,js
+

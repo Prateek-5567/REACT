@@ -1,0 +1,39 @@
+link < https://app.eraser.io/workspace/NUNToZEwuVMkSuuYmxp1?origin=share >
+
+########################################################
+
+React produces spa's single page applications ; there is always single index.html file ; react hai to kahi na nahi js bhi hogi and to run js html needs to be injected somewhere. js enabled hogi tabhi apka react project run hoga.
+
+---
+
+1st main file = index.html
+
+2nd main file = index.js that is directly linked with index.html;
+
+in index.js you import react and react DOM
+
+react is core foundational library .
+
+react DOM is an implementation of react on web,
+
+react NATIVE is implementation of react on mobile apps.
+
+---
+
+first of all you need to create a root element in react frontend in index.js
+
+`const root = ReactDOM.createRoot(document.getElemenById('id'));` 
+
+now this element that you fetched from html will act as your react root.
+
+inside that root you need to render your components of react in StrictMode
+
+react works on components and react makes a DOM structure of its components .
+
+parent level COMPONENT is ./App  `App.jsx` 
+
+jabh aap components ko import karto ho react me uske baad app unhe tags ke jese use kar sakte ho.   import './App'    =>  `<App / > `   => self closing.
+
+ i.e react gives us power to create our coustom tags (html like tags) and then render them in root. 
+
+import ReactDOM from 'react-dom/client' ;  => ye kaam karta h . 
