@@ -3,12 +3,15 @@ import Prateek from "./Prateek"
 
 function App() { 
 // one component can return only only tag so we prefer to wrap everything inside <> ... </>
-
+  const name = "prateek";  // this is called : EVALUATED EXPRESSION(final expression) (this way js is injected in react.)
   return (
     <>   
      {/* you can actually write your html inside this jsx tag. */}
         <h1> 
-          Hi from App.jsx 
+          Hi from App.jsx  
+          <br />
+          Author - {name}
+          {/* Evaluted Expression pass kar sakte h sirf returned html me.. */}
         </h1>
 
         <Prateek/> 
@@ -18,5 +21,8 @@ function App() {
     </>
   )
 }
+
+// return ke andar js ka code nahi likh sakte eg if(true) console.log("A"); 
+// we can only pass evaluated expressions in this
 
 export default App

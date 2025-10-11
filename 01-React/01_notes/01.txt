@@ -30,6 +30,8 @@ link < https://app.eraser.io/workspace/PYqNL9jKd4y4lDYnATBF?origin=share >
 
       -> vite is a bundler ; ls and ls -a commands -> to list documents and hidden docs.
 
+      -> cd 01-React -> to go to your react folder.
+
       -> your node module will not be preinstalled use ` npm install `  to get it. (without this step project will not run .)
 
       -> then run it using any of the script except build cuz that is used for deployment.

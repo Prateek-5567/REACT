@@ -1,0 +1,2 @@
+## MOTIVE is to create my own COUSTOM REACT LIBRARY
+# UNDERSTAND JSX 

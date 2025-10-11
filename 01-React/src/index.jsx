@@ -19,9 +19,15 @@ import Prateek from './Prateek.jsx';
 const element = document.getElementById('root');
 const root = ReactDOM.createRoot(element);
 
+// React 02 part.
+function MyApp(){
+    return (<h1> My Coustom React</h1>)
+}
+// 
+
 root.render(
   <StrictMode>
-      <App />
+      <App></App>
       <Prateek />
   </StrictMode>
 )
