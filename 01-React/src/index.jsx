@@ -7,39 +7,44 @@
 // durse folder se import karna ho jo same level par h .:-    '/folder/file.xyz' 
 
 import './index.css';  // cuz ye file current folder me h.
-import App from './App.jsx'  // react ka component ekk tag ki trah use hota h hoki hamesha esse import hote h.
+import App from './App.jsx'  // react ka component ekk tag ki trah use hota h joki hamesha esse import hote h.
 // import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-
 import Prateek from './Prateek.jsx';
 
-const element = document.getElementById('root');
-const root = ReactDOM.createRoot(element);
+const root = ReactDOM.createRoot(document.getElementById('root'));
 
 // React 02 part.
 function MyApp(){
     return (<h1> My Coustom React</h1>)
 }
-// object from after conversion : 
-Myvar = "Google Admin";
-const anotherApp = (
+
+const myVar="Injected Varibale as Evaluated expression"
+const finalReactComponent = React.createElement(
   'a',
-  {href:"https://google.com",target:"_blank"},
-  "Click Here to navigate to google.",
-  Myvar
+  {
+    href:"https://google.com",
+    target:"_blank"
+  },
+  "click here to visit google.com  ",
+  myVar
 )
-// just type this object name as it is no more a tag it is converted into object now. 
 
 root.render(
   <StrictMode>
-      <App></App>
-      <Prateek />
-      anotherApp
+      <Prateek/>
+      <App/>
   </StrictMode>
 )
+
+// use only one render.; if many the final one is considered.
+// root.render(
+//   finalReactComponent
+// ) 
+
+
 
 // abhi to ham index.jsx ko import kar rahe h lekin 
 // kuch cases me mostly when you use `npm create react app folderName`
