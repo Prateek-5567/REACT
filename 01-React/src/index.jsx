@@ -23,12 +23,21 @@ const root = ReactDOM.createRoot(element);
 function MyApp(){
     return (<h1> My Coustom React</h1>)
 }
-// 
+// object from after conversion : 
+Myvar = "Google Admin";
+const anotherApp = (
+  'a',
+  {href:"https://google.com",target:"_blank"},
+  "Click Here to navigate to google.",
+  Myvar
+)
+// just type this object name as it is no more a tag it is converted into object now. 
 
 root.render(
   <StrictMode>
       <App></App>
       <Prateek />
+      anotherApp
   </StrictMode>
 )
 
