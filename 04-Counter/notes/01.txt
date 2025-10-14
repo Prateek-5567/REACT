@@ -1,0 +1,17 @@
+define hooks : 
+Hooks in React are functions that let you use React features (like state, lifecycle, and context) inside functional components — without writing a class.
+
+Examples:
+
+useState() → manage component state
+
+useEffect() → handle side effects (API calls, timers, etc.)
+
+useContext() → access context
+
+useRef() → reference DOM elements or persist values
+
+useMemo() / useCallback() → optimize performance
+
+In short:
+👉 Hooks = built-in functions to add stateful and lifecycle behavior to functional components.

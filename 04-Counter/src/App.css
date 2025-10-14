@@ -1,0 +1,10 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto; 
+  /* margin: 0 auto se pura component center ho jayega horizontally */
+  padding: 2rem;
+  text-align: center;  /*text left aligned hota h by default */
+}
+button{
+  margin: 5px;
+}

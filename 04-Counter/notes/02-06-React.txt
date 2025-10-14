@@ -1,0 +1,159 @@
+React keeps a track of virtual Dom which is tree like structure if you want to change
+specific branch i.e specific component in Virtual Dom that is simply possible here.
+only that component will repaint and content on webpage will be updated.
+
+React Virtual DOM, Fiber, and Reconciliation - Video Notes
+Overview
+Purpose: This video is crucial for interview preparation and understanding React's internal concepts. While it's not a hands-on practical session, it provides essential theoretical knowledge about Virtual DOM, Fiber, and Reconciliation.
+
+Key Concepts Covered
+1. Virtual DOM
+What is Virtual DOM?
+
+    A JavaScript-maintained tree structure that represents the DOM
+    React creates its own DOM-like structure behind the scenes through createRoot() method
+    Compares its own tree with the browser's actual DOM and updates only the changed elements
+
+Important Note: Virtual DOM is still a relevant concept, but the underlying implementation has changed significantly
+
+Traditional DOM vs Virtual DOM:
+
+    Browser DOM: Removes entire DOM and re-renders everything on changes (causes page reload and loading icons)
+
+    Virtual DOM: Tracks the entire structure and updates only the specific elements that have changed
+
+2. React Fiber
+What is Fiber?
+
+    Current Implementation: Fiber is the algorithm that React currently uses behind
+     the scenes (not just "ongoing implementation" - it's fully implemented)
+
+    Purpose: The algorithm that updates the Virtual DOM is Reconciliation.
+    Virtual DOM = Reconciliation. : i.e Tracks the entire structure and updates only the specific
+     elements that have changed and the algo that how much time do it need to wait before next update.
+
+# Goals of React Fiber:
+
+    Improve Sustainability: Better handling of areas like animation, layout, and gestures
+
+    Solve Performance Issues: Previously, React updated everything immediately, which caused animation problems
+
+Key Features of Fiber:
+
+    ->Incremental Rendering: Ability to split rendering work into chunks and spread across multiple frames
+    ->Pause, Abort, Resume: Can pause work and resume later as new updates come in.
+    ->Priority Assignment: Different types of updates can have different priorities
+    ->Work Scheduling: Can abort previously completed work if it's no longer needed
+
+3. Reconciliation:-
+Definition: The algorithm React uses to diff one tree with another.
+Most Important Point: Reconciliation is the algorithm behind what people commonly understand as "Virtual DOM"
+Similar to Git's diff algorithm - compares old and new states to determine what needs updating.
+
+How it Works:
+
+    Compares two trees: the actual browser DOM tree and React's own tree (created by createRoot())
+
+    Determines which parts need to be changed.
+
+    Updates only the necessary parts rather than re-rendering the entire application (only required components).
+
+Process:
+    When state changes (usually via setState), a new tree is generated
+    New tree is diffed(compared diffrences) with the previous tree
+    React computes which operations are needed to update the rendering tree
+    Only selective parts are updated instead of re-rendering everything
+
+4. Performance Optimizations
+Update Batching:
+
+Problem: Multiple rapid updates can cause performance issues
+
+Solution: Instead of applying updates immediately, Fiber can wait and batch them together
+
+Example: If three updates come in quick succession, Fiber might skip intermediate updates and apply only the final one
+
+#.Priority System:
+
+Animation Updates: Higher priority compared to data store updates
+
+User Interactions: Can have immediate priority when needed
+
+Background Updates: Lower priority, can be deferred
+
+#.Update Strategies:
+
+Push-based Approach: App decides when to schedule updates
+
+Pull-based Approach: Framework (React) makes smart decisions about scheduling
+
+Most of the time, React decides when and how to send updates
+
+5. Important Technical Details
+Keys in Lists:
+Essential for Fiber algorithm's performance optimization
+Keys should be stable, predictable, and unique
+
+Interview Importance: Frequently asked concept - understanding why keys are necessary.
+Without proper keys, React shows warnings but still works, just less efficiently
+Fiber algorithm uses keys to improve list rendering performance.
+
+Component Comparison:
+
+Different component types generate substantially different trees
+
+React doesn't try to differentiate between them but replaces the old tree completely
+
+Some components are known to change everything, so they're not compared but directly replaced
+
+Hydration:
+
+Process when HTML elements are rendered first (buttons, images appear)
+
+JavaScript is injected later to make elements functional (clickable)
+
+Fiber algorithm significantly improves hydration processes
+
+Modern Context
+Current State (2023):
+
+Virtual DOM: Still exists conceptually but internal implementation has changed
+
+Interview Relevance: Still asked in interviews to test foundational knowledge
+
+Fiber: Fully implemented and is the current algorithm powering React
+
+Documentation: Most documentation is 7+ years old but concepts remain relevant
+
+Learning Recommendations
+Prerequisites:
+
+Understanding of React components, elements, and instances
+
+Basic knowledge of reconciliation concepts
+
+Complexity Level:
+
+Fiber Architecture: Much lower-level abstraction than typical application development
+
+Code Difficulty: Even experienced developers find Fiber's source code challenging
+
+Learning Advice: Don't get frustrated if not everything is clear immediately - it's complex by nature
+
+Practical Implications
+For Developers:
+
+You rarely need to think about state transitions manually.
+React handles the complex algorithm work behind the scenes.
+Understanding these concepts helps in debugging and performance optimization.
+Provides insight into why certain React patterns and best practices exist.
+
+
+Key Takeaways
+Virtual DOM is still relevant conceptually, but Fiber is the actual implementation.
+-> Reconciliation is the core algorithm that makes React efficient.
+-> Performance optimization through smart update batching and priority systems/
+-> Keys in lists are crucial for optimal performance
+
+Understanding these concepts provides deep insight into React's internal workings
+
