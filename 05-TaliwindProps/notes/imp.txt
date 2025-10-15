@@ -1,0 +1,5 @@
+code run na hoye to website me console me jake dekhlena
+must write your import script outside body
+must do cd currFolder 
+must do npm i    here.
+must use import - `import React from 'react'` in every jsx file.
