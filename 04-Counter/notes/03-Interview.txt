@@ -1,1 +1,34 @@
 There is a very famous interview question on Counter App.
+
+count = 15;
+addValue(){
+    setCounter(count+1);
+    setCounter(count+1);
+    setCounter(count+1);
+    setCounter(count+1);
+    setCounter(count+1);
+
+}
+
+when this function is called onClick = {addValue} on INC button : what will be the final value of count.
+
+because of fiber algorithm count will update only once even if setCounter() is invoked multiple times.
+
+All these updates reference the same counter value. React groups them into a single batch, and since
+ they're all performing the identical operation on the same initial value, only one update occurs.
+
+addValue(){
+    setCounter( (prevCount) => prevCount+1 );
+    setCounter( (prevCountt) => prevCountt+1 );
+}
+
+setCounter is a setterMethod that expects a callback function which holds the previous state of your
+ parameter ; directly update previous state : ~ internal memory update.
+
+ Key Points:
+
+setCounter accepts a callback function as a parameter (a hidden feature)
+
+The callback receives the previous/last updated state as an argument
+
+Each update now properly chains, using the result of the previous update

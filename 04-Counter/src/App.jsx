@@ -31,7 +31,11 @@ function App(){
   }
   function DEC(){
     // currCount--;
-    setCounter(currCount-1);
+    setCounter(currCount-1); // niche vale 2 will get batched with this.
+    setCounter(currCount-1); // because of batched updates in React fiber algorithm this wont work
+    setCounter(currCount-1); // because of batched updates in React fiber algorithm this wont work
+    setCounter( (prevCnt)=>prevCnt+1 ); // this will work.
+
   }
   function Double(){
     currCount *=2;
