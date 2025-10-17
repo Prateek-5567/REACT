@@ -1,0 +1,93 @@
+🧠 useCallback(fn,[dependencies]); 
+  if i want a function to be called whenever you click a checkbox or slide a slider to someValue then
+  you can keep those conditions under dependencies nd function will be auto called.
+
+🧠 useCallback Hook 
+  call useCallback at the top level of your component to cache the function between page re-renders.
+
+-> useCallback kya karta h function ko aur uske dependents ko cache memory me rakhta hai => for function optimisation.
+
+🧠 Purpose:
+  Prevents unnecessary re-creation of functions during re-renders.
+  It memoizes (remembers) a function.
+
+📘 Syntax:
+  const memoizedCallback = useCallback(() => {
+    // function code
+  }, [dependencies]);
+
+⚙️ How it Works :-
+
+  React returns the same function instance unless one of the dependencies changes.
+  Helps in optimizing performance, especially when passing functions as props to child components.
+
+⚠️ Avoid Overuse :-
+
+  Don’t use useCallback everywhere — it adds overhead.
+  Use it only when function identity affects performance or behavior.
+
+🧩 Related Hook :-
+
+useMemo: memoizes values.
+
+useCallback: memoizes functions.
+
+-> jaha par bhi aapko function ko optimise karvana ho , memoize karvana ho always use - useCallback().
+#################################################################
+
+⚙️ useEffect Hook – Summary
+
+Purpose: Runs side effects in functional components.
+(Side effects = tasks outside React’s rendering, like fetching data, updating DOM, timers, etc.)
+
+-> it is actually responsibe for running the functions or controling sideEffects based on dependencies 
+
+🧠 Syntax :-
+useEffect(() => {
+  // side effect code
+  return () => {
+    // cleanup code (optional)
+  };
+}, [dependencies]);
+
+📘 How It Works :-
+
+Runs after the component renders.
+
+The behavior depends on the dependency array as follows :
+
+  [] → runs only once (on mount).  // if you pass empty array.
+
+  [deps] → runs when deps change. // if you provide dependencies.
+
+  (no array) → runs after every render.
+
+🧩 Common Uses :-
+
+  Fetching data from APIs
+
+  Setting up event listeners
+
+  Managing timers or intervals
+
+  Updating document title
+
+🧹 Cleanup Function
+
+Used to avoid memory leaks (e.g., remove listeners, clear intervals).
+
+Runs when the component unmounts or before next effect.
+
+⚠️ Note
+
+  Keep logic inside useEffect side-effect-free unless necessary.
+  Avoid directly modifying state in a loop inside useEffect.
+
+####################################################################
+
+3.useRef hook : kisi chij ka reference lena ho to useRef hook use hoga.
+for eg.:
+ref={passwordReference} => jis element me ye attribute daloge passwordReference variable me uska reference aa jayega 
+
+    passwordref.current?.select();  => this is called optional execute.
+    if LHS exists/true => then apply properties to the right on it.
