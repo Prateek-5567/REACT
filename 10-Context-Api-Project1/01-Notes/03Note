@@ -1,0 +1,10 @@
+#
+    npm install -D tailwindcss@3 postcss autoprefixer 
+
+    you can uninstall libraries and tools the same way you install them:
+    npm uninstall tailwindcss postcss autoprefixer
+
+    add tailwind files : npx tailwindcss init -p
+    to remove files in cwd :- 
+    rm tailwind.config.js postcss.config.js
+#
