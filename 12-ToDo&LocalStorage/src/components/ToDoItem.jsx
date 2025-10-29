@@ -8,7 +8,7 @@ function TodoItem({ todo }) { // this todo passed as prop is single object and p
   const {updateTodo , deleteTodo , toggleComplete } = useTodo();
 
   const editTodo = ()=>{
-    updateTodo(todo.id,todoMsg); // yaha dikkat ayegi.
+    updateTodo(todo.id,todoMsg); // yaha dikkat ayi thi..
     setIsTodoEditable(false);
   }
   const toggleCompleted = ()=>{
